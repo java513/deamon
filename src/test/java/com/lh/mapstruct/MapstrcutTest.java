@@ -7,8 +7,10 @@ import com.lh.mapstruct.dto.DriverDTO;
 import com.lh.mapstruct.dto.PartDTO;
 import com.lh.mapstruct.vo.CarVO;
 import com.lh.mapstruct.vo.DriverVO;
+import com.lh.mapstruct.vo.VehicleVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -27,6 +29,21 @@ import java.util.List;
 @SpringBootTest(classes = AppSpringBoot.class)
 @RunWith(SpringRunner.class)
 public class MapstrcutTest {
+    @Autowired
+    private CarConvert carConvert;
+
+    /**
+     * 测试Spring和mapstruct整合
+     * 1。@Autowired
+     *     private CarConvert carConvert;
+     * 2。componentModel="spring"
+     */
+    @Test
+    public void springAndMap() {
+        CarDTO carDTO = buildCarDTO();
+        VehicleVO vehicleVO = carConvert.carDTO2vehicleVO(carDTO);
+        System.out.println(vehicleVO);
+    }
 
     @Test
     public void carDTO2vehicleVO() {

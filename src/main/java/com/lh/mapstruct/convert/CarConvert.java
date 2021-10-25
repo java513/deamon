@@ -26,7 +26,7 @@ import java.util.List;
  * @author: lh
  * @date: 2021-10-24 11:57
  **/
-@Mapper
+@Mapper(componentModel="spring")
 public abstract class CarConvert {
 
     public static CarConvert INSTANCE = Mappers.getMapper(CarConvert.class);
