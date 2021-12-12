@@ -2,6 +2,8 @@ package com.lh.nowcoder;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * @program: deamon
  * @description:
@@ -36,5 +38,18 @@ public class NowCoderTest {
             head = nextNode;
         }
         return preNode;
+    }
+
+    @Test
+    public void testArray() {
+        int[] arr = {1,2,6,3};
+        resetArray(arr);
+        System.out.println(arr[0]);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    private void resetArray(int[] arr) {
+        arr[0] = 10;
+        System.out.println(Arrays.toString(arr));
     }
 }

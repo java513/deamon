@@ -1,5 +1,6 @@
 package com.lh.jdk8;
 
+import com.lh.threadlocal.DateUtil;
 import org.junit.Test;
 
 import java.text.ParseException;
@@ -214,6 +215,12 @@ public class DateTest {
         //使用指定的时区创建日期时间
         ZonedDateTime now2 = ZonedDateTime.now(ZoneId.of("Asia/Seoul"));
         System.out.println("now2="+now2);
+    }
+
+    @Test
+    public void formateDate(){
+        System.out.println(DateUtil.formateDate(new Date()));
+        System.out.println(DateUtil.formateDate(new Date()));
     }
 }
 
