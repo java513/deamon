@@ -52,4 +52,20 @@ public class NowCoderTest {
         arr[0] = 10;
         System.out.println(Arrays.toString(arr));
     }
+
+    @Test
+    public void testLadder(){
+        System.out.println("第11阶楼梯："+ladder(11));
+        System.out.println("第9阶楼梯："+ladder(9));
+    }
+
+    private int ladder(int num){
+        if (num==1){
+            return 1;
+        }else if(num==2){
+            return 2;
+        }else {
+            return ladder(num-1)+ladder(num-2);
+        }
+    }
 }
